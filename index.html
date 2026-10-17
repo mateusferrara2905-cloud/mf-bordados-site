@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&F Bordados</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #174b38;
+  --dark: #103629;
+  --gold: #e0bf78;
+  --cream: #fffaf1;
+  --red: #a83232;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: #26352d;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px 6%;
+  background: var(--green);
+  color: white;
+}
+
+.logo {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.logo b {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 65px 7%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, #0c3027ed, #0c302766),
+    url('https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=1600&q=80')
+    center/cover;
+}
+
+.hero > div {
+  max-width: 650px;
+}
+
+.kicker {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(38px, 6vw, 62px);
+  font-weight: 600;
+  line-height: 1.12;
+  margin: 16px 0;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.btn {
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 4px 4px 4px 0;
+}
+
+.gold {
+  background: var(--gold);
+  color: #302719;
+}
+
+.green {
+  background: var(--green);
+  color: white;
+}
+
+.red {
+  background: var(--red);
+  color: white;
+}
+
+.light {
+  background: white;
+  color: var(--green);
+}
+
+section {
+  padding: 48px 6%;
+}
+
+.heading {
+  text-align: center;
+  margin: 0 auto 28px;
+}
+
+.heading h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--green);
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.product, .panel-box {
+  background: white;
+  border: 1px solid #eee5d5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #eee;
+}
+
+.product-info {
+  padding: 17px;
+}
+
+.product-info p {
+  min-height: 42px;
+  line-height: 1.5;
+}
+
+.product h3 {
+  color: var(--green);
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--red);
+}
+
+.product-info .btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+#cart {
+  background: #f1eadc;
+}
+
+.panel-box {
+  max-width: 850px;
+  margin: auto;
+  padding: 24px;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-row button {
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.total {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 14px 0 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  background: white;
+}
+
+textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+.about {
+  background: var(--green);
+  color: white;
+  text-align: center;
+}
+
+.about h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--gold);
+}
+
+.about p {
+  max-width: 760px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  background: var(--dark);
+  color: white;
+  padding: 25px 6%;
+}
+
+footer a {
+  color: var(--gold);
+}
+
+#adminButton {
+  position: fixed;
+  z-index: 40;
+  right: 14px;
+  bottom: 14px;
+  background: var(--green);
+  border: 2px solid var(--gold);
+  color: white;
+  border-radius: 28px;
+  padding: 13px 18px;
+  font-weight: bold;
+  box-shadow: 0 3px 16px #0004;
+}
+
+#adminModal[hidden],
+#loginModal[hidden] {
+  display: none !important;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #000a;
+  overflow: auto;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  background: white;
+  border-radius: 12px;
+  width: min(850px, 100%);
+  max-height: 94vh;
+  overflow: auto;
+  padding: 22px;
+  box-shadow: 0 15px 60px #0005;
+}
+
+.dialog-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.dialog-head h2 {
+  color: var(--green);
+  margin: 8px 0 16px;
+}
+
+.close {
+  border: 0;
+  background: #eee;
+  padding: 10px 13px;
+  border-radius: 5px;
+}
+
+.notice {
+  background: #fff4d9;
+  border-radius: 6px;
+  padding: 12px;
+  line-height: 1.5;
+}
+
+.admin-product {
+  background: #f7f4ed;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+
+.admin-product label {
+  margin-top: 9px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.status {
+  min-height: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 720px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 360px;
+  }
+
+  .product img {
+    height: 240px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">M<b>&</b>F Bordados</div>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#produtos">Catálogo</a>
+    <a href="#cart">Carrinho</a>
+    <a href="#orcamento">Orçamento</a>
+    <a href="#sobre">Sobre nós</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div>
+    <div class="kicker">Feito com carinho em cada ponto</div>
+
+    <h1 id="heroTitle">Presentes que carregam significado.</h1>
+
+    <p id="heroDescription">
+      Bordados personalizados feitos à máquina para transformar suas ideias em peças especiais. Neste Natal, presenteie com algo único!
+    </p>
+
+    <a class="btn gold" href="#produtos">Ver catálogo</a>
+
+    <a
+      class="btn light"
+      id="heroWhatsApp"
+      href="https://wa.me/5531998773667"
+      target="_blank"
+      rel="noopener"
+    >Fale conosco</a>
+  </div>
+</section>
+
+<section id="produtos">
+  <div class="heading">
+    <h2>Nosso catálogo</h2>
+    <p>Escolha uma peça para adicionar ao carrinho.</p>
+  </div>
+
+  <div id="productGrid" class="products"></div>
+</section>
+
+<section id="cart">
+  <div class="heading">
+    <h2>Seu carrinho</h2>
+    <p>Confira os itens e envie seu pedido.</p>
+  </div>
+
+  <div class="panel-box">
+    <div id="cartItems">Seu carrinho está vazio.</div>
+
+    <div class="total">
+      Total estimado: <span id="cartTotal">R$ 0,00</span>
+    </div>
+
+    <button type="button" class="btn green" id="checkoutButton">
+      Finalizar pelo WhatsApp
+    </button>
+
+    <button type="button" class="btn red" id="clearCartButton">
+      Esvaziar carrinho
+    </button>
+
+    <p>
+      <small>O valor final e o prazo serão confirmados no atendimento.</small>
+    </p>
+  </div>
+</section>
+
+<section id="orcamento">
+  <div class="heading">
+    <h2>Solicite um orçamento</h2>
+    <p>Conte como você gostaria que fosse seu bordado.</p>
+  </div>
+
+  <div class="panel-box">
+    <form id="quoteForm">
+
+      <label for="customerName">Seu nome</label>
+      <input id="customerName" required placeholder="Digite seu nome">
+
+      <label for="customerContact">Telefone para contato</label>
+      <input id="customerContact" required placeholder="Seu WhatsApp">
+
+      <label for="quoteProduct">Qual peça deseja bordar?</label>
+      <input id="quoteProduct" required placeholder="Ex.: toalha, camiseta, presente">
+
+      <label for="quoteDetails">Detalhes da personalização</label>
+      <textarea
+        id="quoteDetails"
+        required
+        placeholder="Descreva o bordado, cores e quantidade"
+      ></textarea>
+
+      <button class="btn green" type="submit">
+        Enviar orçamento por e-mail
+      </button>
+
+      <button class="btn gold" type="button" id="quoteWhatsAppButton">
+        Pedir pelo WhatsApp
+      </button>
+
+    </form>
+
+    <p>
+      <small>O envio por e-mail abre seu aplicativo de e-mail para você confirmar.</small>
+    </p>
+  </div>
+</section>
+
+<section id="sobre" class="about">
+  <h2>Sobre a M&F Bordados</h2>
+
+  <p id="aboutText">
+    A M&F Bordados transforma ideias em peças personalizadas com bordado à máquina, criando presentes e detalhes especiais com cuidado e dedicação.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>M&F Bordados</strong> — Bordados personalizados à máquina</p>
+
+  <p>
+    WhatsApp:
+    <a
+      id="footerPhone"
+      href="https://wa.me/5531998773667"
+      target="_blank"
+      rel="noopener"
+    >(31) 99877-3667</a>
+  </p>
+
+  <p>
+    E-mail:
+    <a id="footerEmail" href="mailto:mfbordados38@gmail.com">
+      mfbordados38@gmail.com
+    </a>
+  </p>
+
+  <p>© <span id="year"></span> M&F Bordados</p>
+</footer>
+
+<button type="button" id="adminButton">⚙ Admin</button>
+
+<!-- Tela de login do administrador -->
+<div class="overlay" id="loginModal" hidden>
+  <div class="dialog" style="max-width:420px">
+
+    <div class="dialog-head">
+      <h2>Acesso do proprietário</h2>
+      <button type="button" class="close" id="closeLogin">Fechar ✕</button>
+    </div>
+
+    <p>Digite a senha para editar o site.</p>
+
+    <form id="loginForm" novalidate>
+      <label for="adminPassword">Senha</label>
+
+      <input
+        id="adminPassword"
+        type="password"
+        autocomplete="current-password"
+        aria-describedby="loginError"
+      >
+
+      <p id="loginError" role="alert" class="status"></p>
+
+      <button class="btn green" id="loginSubmit" type="button">
+        Entrar no painel
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Painel de administração -->
+<div class="overlay" id="adminModal" hidden>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+
+    <div class="dialog-head">
+      <h2 id="adminTitle">Área do proprietário</h2>
+      <button type="button" class="close" id="closeAdmin">Fechar ✕</button>
+    </div>
+
+    <p class="notice">
+      Edite os textos, contatos e produtos. As alterações ficam salvas neste navegador.
+    </p>
+
+    <form id="adminForm">
+
+      <label for="editTitle">Título principal</label>
+      <input id="editTitle" required>
+
+      <label for="editDescription">Descrição principal</label>
+      <textarea id="editDescription" required></textarea>
+
+      <label for="editAbout">Texto sobre a empresa</label>
+      <textarea id="editAbout" required></textarea>
+
+      <label for="editPhone">WhatsApp com código do país</label>
+      <input id="editPhone" required placeholder="5531998773667">
+
+      <label for="editEmail">E-mail da loja</label>
+      <input id="editEmail" type="email" required>
+
+      <h3>Produtos</h3>
+
+      <div id="adminProducts"></div>
+
+      <div class="admin-actions">
+        <button type="button" class="btn gold" id="addProduct">
+          + Adicionar produto
+        </button>
+
+        <button type="submit" class="btn green">
+          Salvar alterações
+        </button>
+
+        <button type="button" class="btn red" id="resetSite">
+          Restaurar padrão
+        </button>
+      </div>
+
+      <p id="adminStatus" class="status" role="status"></p>
+
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  const $ = id => document.getElementById(id);
+
+  const KEY = "mf-bordados-data-v4";
+  const CARTKEY = "mf-bordados-cart-v4";
+  const PASSWORD = "2468";
+
+  const DEFAULTS = {
+    title: "Presentes que carregam significado.",
+
+    description:
+      "Bordados personalizados feitos à máquina para transformar suas ideias em peças especiais. Neste Natal, presenteie com algo único!",
+
+    about:
+      "A M&F Bordados transforma ideias em peças personalizadas com bordado à máquina, criando presentes e detalhes especiais com cuidado e dedicação.",
+
+    phone: "5531998773667",
+    email: "mfbordados38@gmail.com",
+
+    products: [
+      {
+        id: 1,
+        name: "Toalha personalizada",
+        description: "Uma toalha com nome ou detalhe bordado.",
+        price: 40,
+        image: "https://images.unsplash.com/photo-1600369671236-e74521d4b6ad?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        id: 2,
+        name: "Presente especial",
+        description: "Uma peça personalizada para surpreender.",
+        price: 45,
+        image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        id: 3,
+        name: "Bordado personalizado",
+        description: "Conte sua ideia e solicite um orçamento.",
+        price: 40,
+        image: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=900&q=80"
+      }
+    ]
+  };
+
+  const copyDefaults = () =>
+    JSON.parse(JSON.stringify(DEFAULTS));
+
+  function loadData() {
+    try {
+      const x = JSON.parse(localStorage.getItem(KEY));
+
+      if (x && Array.isArray(x.products)) {
+        if (x.email === "v.miguelalves4@gmail.com") {
+          x.email = "mfbordados38@gmail.com";
+        }
+
+        return {
+          ...copyDefaults(),
+          ...x,
+
+          products: x.products.map((p, i) => ({
+            id: Number(p.id) || i + 1,
+            name: String(p.name || "Produto"),
+            description: String(p.description || ""),
+            price: Math.max(0, Number(p.price) || 0),
+            image: String(p.image || "")
+          }))
+        };
+      }
+    } catch (e) {}
+
+    return copyDefaults();
+  }
+
+  function loadCart() {
+    try {
+      const x = JSON.parse(localStorage.getItem(CARTKEY) || "[]");
+
+      return Array.isArray(x)
+        ? x.map(i => ({
+            id: Number(i.id),
+            qty: Math.max(1, Number(i.qty) || 1)
+          }))
+        : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  let data = loadData();
+  let cart = loadCart();
+
+  const digits = s =>
+    String(s || "").replace(/\D/g, "");
+
+  const esc = s =>
+    String(s ?? "").replace(/[&<>\"']/g, c => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[c]));
+
+  const money = n =>
+    Number(n).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
+
+  function saveData() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(data));
+      return true;
+    } catch (e) {
+      alert("Não foi possível salvar neste navegador.");
+      return false;
+    }
+  }
+
+  function saveCart() {
+    try {
+      localStorage.setItem(CARTKEY, JSON.stringify(cart));
+    } catch (e) {}
+  }
+
+  function render() {
+    $("heroTitle").textContent = data.title;
+    $("heroDescription").textContent = data.description;
+    $("aboutText").textContent = data.about;
+
+    const ph = digits(data.phone);
+    const url = "https://wa.me/" + ph;
+
+    $("heroWhatsApp").href = url;
+    $("footerPhone").href = url;
+    $("footerPhone").textContent = data.phone;
+
+    $("footerEmail").href = "mailto:" + data.email;
+    $("footerEmail").textContent = data.email;
+
+    $("productGrid").innerHTML = data.products.length
+      ? data.products.map(p => `
+        <article class="product">
+          <img
+            src="${esc(p.image)}"
+            alt="${esc(p.name)}"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          >
+
+          <div class="product-info">
+            <h3>${esc(p.name)}</h3>
+            <p>${esc(p.description)}</p>
+
+            <div class="price">
+              A partir de ${money(p.price)}
+            </div>
+
+            <button
+              type="button"
+              class="btn green"
+              data-add="${p.id}"
+            >
+              Adicionar ao carrinho
+            </button>
+          </div>
+        </article>
+      `).join("")
+      : "<p>Nenhum produto cadastrado.</p>";
+
+    document.querySelectorAll("[data-add]").forEach(b => {
+      b.addEventListener("click", () =>
+        addToCart(Number(b.dataset.add))
+      );
+    });
+
+    renderCart();
+  }
+
+  function addToCart(id) {
+    if (!data.products.some(p => p.id === id)) return;
+
+    const item = cart.find(x => x.id === id);
+
+    if (item) {
+      item.qty++;
+    } else {
+      cart.push({ id, qty: 1 });
+    }
+
+    saveCart();
+    renderCart();
+
+    alert("Produto adicionado ao carrinho!");
+  }
+
+  function renderCart() {
+    cart = cart.filter(i =>
+      data.products.some(p => p.id === i.id)
+    );
+
+    let total = 0;
+
+    $("cartItems").innerHTML = cart.length
+      ? cart.map(i => {
+          const p = data.products.find(x => x.id === i.id);
+
+          total += p.price * i.qty;
+
+          return `
+            <div class="cart-row">
+              <div>
+                <strong>${esc(p.name)}</strong><br>
+                ${i.qty} × ${money(p.price)}<br>
+                <strong>${money(p.price * i.qty)}</strong>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  data-change="-1"
+                  data-id="${i.id}"
+                >−</button>
+
+                <button
+                  type="button"
+                  data-change="1"
+                  data-id="${i.id}"
+                >+</button>
+
+                <button
+                  type="button"
+                  data-remove="${i.id}"
+                >Remover</button>
+              </div>
+            </div>
+          `;
+        }).join("")
+      : "Seu carrinho está vazio.";
+
+    $("cartTotal").textContent = money(total);
+
+    document.querySelectorAll("[data-change]").forEach(b => {
+      b.addEventListener("click", () =>
+        changeQty(
+          Number(b.dataset.id),
+          Number(b.dataset.change)
+        )
+      );
+    });
+
+    document.querySelectorAll("[data-remove]").forEach(b => {
+      b.addEventListener("click", () => {
+        cart = cart.filter(
+          i => i.id !== Number(b.dataset.remove)
+        );
+
+        saveCart();
+        renderCart();
+      });
+    });
+
+    saveCart();
+  }
+
+  function changeQty(id, n) {
+    const i = cart.find(x => x.id === id);
+    if (!i) return;
+
+    i.qty += n;
+
+    if (i.qty < 1) {
+      cart = cart.filter(x => x.id !== id);
+    }
+
+    saveCart();
+    renderCart();
+  }
+
+  function clearCart() {
+    if (cart.length && confirm("Esvaziar o carrinho?")) {
+      cart = [];
+      saveCart();
+      renderCart();
+    }
+  }
+
+  function checkout() {
+    if (!cart.length) {
+      return alert("Adicione um produto ao carrinho primeiro.");
+    }
+
+    const total = cart.reduce((s, i) => {
+      const p = data.products.find(p => p.id === i.id);
+      return s + p.price * i.qty;
+    }, 0);
+
+    const lines = cart.map(i => {
+      const p = data.products.find(x => x.id === i.id);
+
+      return `${p.name} — ${i.qty} unidade(s) — ${money(p.price * i.qty)}`;
+    }).join("\n");
+
+    window.open(
+      "https://wa.me/" + digits(data.phone) +
+      "?text=" +
+      encodeURIComponent(
+        "Olá! Quero fazer um pedido na M&F Bordados:\n\n" +
+        lines +
+        "\n\nTotal estimado: " + money(total) +
+        "\nGostaria de confirmar valor e prazo."
+      ),
+      "_blank"
+    );
+  }
+
+  function quoteText() {
+    return `Olá! Quero solicitar um orçamento para a M&F Bordados.
+Nome: ${$("customerName").value.trim()}
+Telefone: ${$("customerContact").value.trim()}
+Peça: ${$("quoteProduct").value.trim()}
+Detalhes: ${$("quoteDetails").value.trim()}`;
+  }
+
+  $("quoteForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    if (!$("quoteForm").reportValidity()) return;
+
+    window.location.href =
+      "mailto:" + data.email +
+      "?subject=" +
+      encodeURIComponent("Orçamento M&F Bordados") +
+      "&body=" +
+      encodeURIComponent(quoteText());
+  });
+
+  $("quoteWhatsAppButton").addEventListener("click", () => {
+    if (!$("quoteForm").reportValidity()) return;
+
+    window.open(
+      "https://wa.me/" + digits(data.phone) +
+      "?text=" + encodeURIComponent(quoteText()),
+      "_blank"
+    );
+  });
+
+  // Login integrado à página.
+  function showLogin() {
+    $("adminPassword").value = "";
+    $("loginError").textContent = "";
+    $("loginModal").hidden = false;
+
+    setTimeout(() => $("adminPassword").focus(), 50);
+  }
+
+  function closeLogin() {
+    $("loginModal").hidden = true;
+  }
+
+  function openAdminPanel() {
+    $("loginModal").hidden = true;
+    fillAdmin();
+    $("adminModal").hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeAdminPanel() {
+    $("adminModal").hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  $("adminButton").addEventListener("click", showLogin);
+  $("closeLogin").addEventListener("click", closeLogin);
+
+  $("loginModal").addEventListener("click", e => {
+    if (e.target === $("loginModal")) closeLogin();
+  });
+
+  function attemptLogin() {
+    const entered = $("adminPassword").value;
+
+    if (entered === PASSWORD) {
+      openAdminPanel();
+    } else {
+      $("loginError").textContent = entered
+        ? "Senha incorreta. Tente novamente."
+        : "Digite a senha para continuar.";
+
+      $("adminPassword").focus();
+      $("adminPassword").select();
+    }
+  }
+
+  $("loginSubmit").addEventListener("click", attemptLogin);
+
+  $("loginForm").addEventListener("submit", e => {
+    e.preventDefault();
+    attemptLogin();
+  });
+
+  $("adminPassword").addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      attemptLogin();
+    }
+  });
+
+  $("closeAdmin").addEventListener("click", closeAdminPanel);
+
+  $("adminModal").addEventListener("click", e => {
+    if (e.target === $("adminModal")) closeAdminPanel();
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      closeLogin();
+      closeAdminPanel();
+    }
+  });
+
+  function fillAdmin() {
+    $("editTitle").value = data.title;
+    $("editDescription").value = data.description;
+    $("editAbout").value = data.about;
+    $("editPhone").value = data.phone;
+    $("editEmail").value = data.email;
+
+    $("adminProducts").innerHTML = "";
+
+    data.products.forEach(addAdminProduct);
+
+    $("adminStatus").textContent = "";
+  }
+
+  function addAdminProduct(p) {
+    const id = p
+      ? p.id
+      : Date.now() + Math.floor(Math.random() * 99999);
+
+    const box = document.createElement("div");
+
+    box.className = "admin-product";
+    box.dataset.id = id;
+
+    box.innerHTML = `
+      <label>Nome do produto</label>
+      <input
+        class="p-name"
+        required
+        maxlength="100"
+        value="${esc(p ? p.name : "")}"
+        placeholder="Nome do produto"
+      >
+
+      <label>Descrição</label>
+      <textarea
+        class="p-description"
+        required
+        maxlength="500"
+      >${esc(p ? p.description : "")}</textarea>
+
+      <label>Preço (R$)</label>
+      <input
+        class="p-price"
+        type="number"
+        min="0"
+        step="0.01"
+        required
+        value="${p ? Number(p.price) : 40}"
+      >
+
+      <label>URL da foto (opcional)</label>
+      <input
+        class="p-image"
+        type="url"
+        value="${esc(p ? p.image : "")}"
+        placeholder="https://..."
+      >
+
+      <button class="btn red delete" type="button">
+        Excluir produto
+      </button>
+    `;
+
+    box.querySelector(".delete").addEventListener("click", () => {
+      if (confirm("Excluir este produto?")) {
+        box.remove();
+      }
+    });
+
+    $("adminProducts").appendChild(box);
+  }
+
+  $("addProduct").addEventListener("click", () => {
+    addAdminProduct(null);
+  });
+
+  $("resetSite").addEventListener("click", () => {
+    if (!confirm("Restaurar os dados originais?")) return;
+
+    data = copyDefaults();
+
+    if (saveData()) {
+      render();
+      fillAdmin();
+      $("adminStatus").textContent =
+        "Dados originais restaurados.";
+    }
+  });
+
+  $("adminForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    if (!$("adminForm").reportValidity()) return;
+
+    const phone = digits($("editPhone").value);
+
+    if (phone.length < 12 || phone.length > 13) {
+      alert(
+        "Informe o WhatsApp com código do país, por exemplo 5531998773667."
+      );
+      return;
+    }
+
+    const products = [];
+
+    for (const box of document.querySelectorAll(".admin-product")) {
+      const name = box.querySelector(".p-name").value.trim();
+      const description =
+        box.querySelector(".p-description").value.trim();
+      const price =
+        Number(box.querySelector(".p-price").value);
+      const image =
+        box.querySelector(".p-image").value.trim();
+
+      if (
+        !name ||
+        !description ||
+        !Number.isFinite(price) ||
+        price < 0
+      ) {
+        alert("Confira nome, descrição e preço de cada produto.");
+        return;
+      }
+
+      products.push({
+        id: Number(box.dataset.id),
+        name,
+        description,
+        price,
+        image
+      });
+    }
+
+    const next = {
+      title: $("editTitle").value.trim(),
+      description: $("editDescription").value.trim(),
+      about: $("editAbout").value.trim(),
+      phone,
+      email: $("editEmail").value.trim(),
+      products
+    };
+
+    if (
+      !next.title ||
+      !next.description ||
+      !next.about ||
+      !next.email
+    ) {
+      alert("Preencha todos os campos.");
+      return;
+    }
+
+    data = next;
+
+    if (!saveData()) return;
+
+    render();
+
+    $("adminStatus").textContent =
+      "Alterações salvas neste navegador.";
+
+    alert("Alterações salvas com sucesso!");
+  });
+
+  $("checkoutButton").addEventListener("click", checkout);
+  $("clearCartButton").addEventListener("click", clearCart);
+
+  $("year").textContent = new Date().getFullYear();
+
+  render();
+})();
+</script>
+
+</body>
+</html>
